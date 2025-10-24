@@ -129,16 +129,6 @@ public class GameWindow extends JFrame {
     // Clicked button happenings
     public void handleTileClick(ActionEvent e) {
         TileButton clickedButton = (TileButton) e.getSource();
-
-        // for seeing if you're right
-        if (clickedButton.inRightSpot())
-            System.out.println("Tile in right spot");
-        else
-            System.out.println("Tile is in wrong spot");
-            System.out.println(clickedButton.getCol());
-            System.out.println(clickedButton.getRow());
-            System.out.println(clickedButton.getRightCol());
-            System.out.println(clickedButton.getRightRow());
         
         // switching
         if (selectedButton == null) {

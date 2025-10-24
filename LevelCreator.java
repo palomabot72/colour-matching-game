@@ -7,38 +7,43 @@ public class LevelCreator extends JFrame {
     private JPanel colourPreviewPanel;
     
     public LevelCreator() {
-        setTitle("Create Your Level");
+        setTitle("Create A Level");
         setSize(500, 400);
         setLocationRelativeTo(null);
         
         JPanel panel = new JPanel(new BorderLayout(10, 10));
         panel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        panel.setBackground(new Color(220, 225, 255));
+        panel.setOpaque(true);
         
         // Color selection
         JPanel colourPanel = new JPanel(new GridLayout(5, 2, 10, 10));
-        colourPanel.add(new JLabel("Top-Left Color (R,G,B):"));
-        colourFields[0] = new JTextField("255,0,0");
+        colourPanel.setBackground(new Color(220, 225, 255));
+        colourPanel.setOpaque(true);
+        colourPanel.add(new JLabel(" Top-Left Color (R,G,B):"));
+        colourFields[0] = new JTextField("255,230,0");
         colourPanel.add(colourFields[0]);
         
-        colourPanel.add(new JLabel("Top-Right Color (R,G,B):"));
-        colourFields[1] = new JTextField("0,255,0");
+        colourPanel.add(new JLabel(" Top-Right Color (R,G,B):"));
+        colourFields[1] = new JTextField("255,84,165");
         colourPanel.add(colourFields[1]);
         
-        colourPanel.add(new JLabel("Bottom-Left Color (R,G,B):"));
-        colourFields[2] = new JTextField("0,0,255");
+        colourPanel.add(new JLabel(" Bottom-Left Color (R,G,B):"));
+        colourFields[2] = new JTextField("51,153,255");
         colourPanel.add(colourFields[2]);
         
-        colourPanel.add(new JLabel("Bottom-Right Color (R,G,B):"));
-        colourFields[3] = new JTextField("255,255,0");
+        colourPanel.add(new JLabel(" Bottom-Right Color (R,G,B):"));
+        colourFields[3] = new JTextField("175,100,255");
         colourPanel.add(colourFields[3]);
         
-        colourPanel.add(new JLabel("Grid Size:"));
+        colourPanel.add(new JLabel(" Grid Size:"));
         sizeField = new JTextField("6");
         colourPanel.add(sizeField);
         
         // Color preview
         colourPreviewPanel = new JPanel(new GridLayout(2, 2, 5, 5));
         colourPreviewPanel.setPreferredSize(new Dimension(100, 100));
+
         updateColorPreview();
         
         // Buttons
@@ -51,6 +56,8 @@ public class LevelCreator extends JFrame {
         backBtn.addActionListener(e -> { dispose(); new HomeScreen(); });
         
         JPanel buttonPanel = new JPanel(new FlowLayout());
+        buttonPanel.setBackground(new Color(220, 225, 255));
+        buttonPanel.setOpaque(true);
         buttonPanel.add(previewBtn);
         buttonPanel.add(createBtn);
         buttonPanel.add(backBtn);
